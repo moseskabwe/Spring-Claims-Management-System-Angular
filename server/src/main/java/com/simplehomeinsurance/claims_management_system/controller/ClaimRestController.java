@@ -39,6 +39,11 @@ public class ClaimRestController {
 		return claimService.getClaimsList();
 	}
 	
+	@GetMapping("/claims/dashboard")
+	public List<Claim> getDashboardClaims() {
+		return claimService.getDashboardClaimsList();
+	}
+	
 	@GetMapping("/claims/{claimNumber}/users/{userId}")
 	public Claim getClaim(@PathVariable String claimNumber,
 						  @PathVariable int userId,

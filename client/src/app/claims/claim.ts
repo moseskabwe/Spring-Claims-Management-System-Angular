@@ -1,6 +1,8 @@
+import { User } from "../users/user";
+
 export class Claim {
    claimNumber!: string;
-   //adjuster!: User;
+   adjuster!: User;
    //policyHolder!:  PolicyHolder;
    //policy!: Policy;
    lossType!: string;

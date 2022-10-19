@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ClaimsModule } from './claims/claims.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ClaimsModule } from './claims/claims.module';
     BrowserModule,
     AppRoutingModule,
     ClaimsModule,
+    UsersModule,
     NoopAnimationsModule,
     HttpClientModule
   ],

@@ -5,6 +5,8 @@ import { ClaimsRoutingModule } from './claims-routing.module';
 import { ClaimListComponent } from './claim-list/claim-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { UsersModule } from '../users/users.module';
+import { ClaimService } from './claim.service';
 
 
 @NgModule({
@@ -17,5 +19,6 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     MatTableModule
   ],
+  providers: [ClaimService]
 })
 export class ClaimsModule { }

@@ -15,7 +15,7 @@
 	<name>claims_management_system</name>
 	<description>Spring Boot claims management system</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>18</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

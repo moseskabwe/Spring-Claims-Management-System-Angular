@@ -7,6 +7,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ClaimsModule } from './claims/claims.module';
 import { UsersModule } from './users/users.module';
+import { ClaimpaymentsModule } from './claimpayments/claimpayments.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -17,8 +24,15 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule,
     ClaimsModule,
     UsersModule,
+    ClaimpaymentsModule,
     NoopAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClaimListComponent } from './claim-list/claim-list.component';
 
 const routes: Routes = [
-    {path: 'dashboard', component: ClaimListComponent}
+    {path: 'claims', component: ClaimListComponent}
 ];
 
 @NgModule({

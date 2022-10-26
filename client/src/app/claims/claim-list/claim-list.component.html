@@ -1,21 +1,53 @@
-<h3>All Claims</h3>
-
-<table mat-table [dataSource]="dashboardClaims" class="mat-elevation-z8">
+<div class="heading">
+    <h2>All Claims</h2>
+</div>
+<table mat-table [dataSource]="claims" class="mat-elevation-z8">
 
     <ng-container matColumnDef="claim-number">
         <th mat-header-cell *matHeaderCellDef> Claim Number </th>
         <td mat-cell *matCellDef="let claim"> {{claim.claimNumber}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="adjuster">
-        <th mat-header-cell *matHeaderCellDef> Adjuster </th>
-        <td mat-cell *matCellDef="let claim"> {{claim.user.firstName}} {{claim.user.lastName}}</td>
+    <ng-container matColumnDef="policyholder">
+        <th mat-header-cell *matHeaderCellDef> Policyholder Number </th>
+        <td mat-cell *matCellDef="let claim"> {{ claim.policyHolder.policyHolderNumber }} </td>
     </ng-container>
 
+    <ng-container matColumnDef="policy-type">
+        <th mat-header-cell *matHeaderCellDef> Policy Type </th>
+        <td mat-cell *matCellDef="let claim"> {{ claim.policy.policyType }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loss-type">
+        <th mat-header-cell *matHeaderCellDef> Loss Type </th>
+        <td mat-cell *matCellDef="let claim"> {{claim.lossType}} </td>
+    </ng-container>
+    
     <ng-container matColumnDef="incident-date">
         <th mat-header-cell *matHeaderCellDef> Incident Date </th>
         <td mat-cell *matCellDef="let claim"> {{claim.incidentDate}} </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="['claim-number', 'adjuster', 'incident-date']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['claim-number', 'adjuster', 'incident-date'];"></tr>
+
+    <ng-container matColumnDef="report-date">
+        <th mat-header-cell *matHeaderCellDef> Report Date </th>
+        <td mat-cell *matCellDef="let claim"> {{claim.filingDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="adjuster">
+        <th mat-header-cell *matHeaderCellDef> Adjuster </th>
+        <td mat-cell *matCellDef="let claim"> {{claim.adjuster?.firstName}} {{claim.adjuster?.lastName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let claim"> {{claim.status}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let claim"> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['claim-number', 'policyholder', 'policy-type', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['claim-number', 'policyholder', 'policy-type', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action'];"></tr>
 </table>

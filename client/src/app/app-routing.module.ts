@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClaimListComponent } from './claims/claim-list/claim-list.component';
 
 const routes: Routes = [
-  {path: 'dashboard', component: ClaimListComponent},
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
+  {path: 'claims', component: ClaimListComponent},
+  {path: '', redirectTo: 'claims', pathMatch: 'full'}
 ];
 
 @NgModule({

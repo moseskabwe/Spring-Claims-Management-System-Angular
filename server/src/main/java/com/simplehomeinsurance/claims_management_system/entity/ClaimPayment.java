@@ -26,7 +26,7 @@ public class ClaimPayment {
 	@Column(name="id")
 	private int paymentNumber;
 	
-	@JsonBackReference
+	//@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="claim_number")
 	private Claim claim;

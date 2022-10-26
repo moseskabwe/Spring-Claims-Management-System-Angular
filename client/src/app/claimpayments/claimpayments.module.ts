@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClaimpaymentsRoutingModule } from './claimpayments-routing.module';
+import { ClaimpaymentListComponent } from './claimpayment-list/claimpayment-list.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ClaimpaymentListComponent
+  ],
   imports: [
     CommonModule,
-    ClaimpaymentsRoutingModule
+    ClaimpaymentsRoutingModule,
+    MatTableModule
   ]
 })
 export class ClaimpaymentsModule { }

@@ -16,6 +16,7 @@ dashboardClaims!: Claim[];
 
   ngOnInit(): void {
     this.getDashboardClaims();
+    this.getClaims();
   }
 
   private getClaims() {

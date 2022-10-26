@@ -10,24 +10,16 @@ import { ClaimService } from '../claim.service';
 export class ClaimListComponent implements OnInit {
 
 claims!: Claim[];
-dashboardClaims!: Claim[];
 
   constructor(private claimService: ClaimService) { }
 
   ngOnInit(): void {
-    this.getDashboardClaims();
     this.getClaims();
   }
 
   private getClaims() {
     this.claimService.getClaimList().subscribe(data => {
       this.claims = data;
-    });
-  }
-
-  private getDashboardClaims() {
-    this.claimService.getDashboardClaimList().subscribe(data => {
-      this.dashboardClaims = data;
     });
   }
 }

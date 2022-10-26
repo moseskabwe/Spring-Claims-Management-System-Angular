@@ -1,5 +1,6 @@
 package com.simplehomeinsurance.claims_management_system.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,6 +44,27 @@ public class ClaimRestController {
 	public List<Claim> getDashboardClaims() {
 		return claimService.getDashboardClaimsList();
 	}
+	
+	@GetMapping("/claims/dashboard/stats")
+    public List<Long> getClaimStats() {
+	    Long numberFire = claimService.getNumberOfFireClaims();
+        Long numberDamage = claimService.getNumberOfDamageClaims();
+        Long numberTheft = claimService.getNumberOfTheftClaims();
+        Long numberNewClaims = claimService.getNumberOfNewClaims();
+        Long numberInProgress = claimService.getNumberOfClaimsInProgress();
+        Long numberFinalised = claimService.getNumberOfFinalisedClaims();
+        Long numberTotal = claimService.getNumberTotalClaims();
+        int finalisedAverage = (int) (Math.round(((double) numberFinalised
+                                        / numberTotal) * 10000.0)/100.0);           
+        ArrayList<Long> stats = new ArrayList<>();
+        stats.add(numberFire);
+        stats.add(numberDamage);
+        stats.add(numberTheft);
+        stats.add(numberNewClaims);
+        stats.add(numberInProgress);
+        stats.add(Long.valueOf(finalisedAverage));
+        return stats;
+    }
 	
 	@GetMapping("/claims/{claimNumber}/users/{userId}")
 	public Claim getClaim(@PathVariable String claimNumber,

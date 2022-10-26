@@ -14,8 +14,4 @@ export class ClaimService {
     getClaimList(): Observable<Claim[]> {
         return this.httpClient.get<Claim[]>(`${this.baseURL}`);
     }
-
-    getDashboardClaimList(): Observable<Claim[]> {
-        return this.httpClient.get<Claim[]>(`${this.baseURL}/dashboard`);
-    }
 }

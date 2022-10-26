@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatDividerModule } from '@angular/material/divider';
     ClaimsModule,
     UsersModule,
     ClaimpaymentsModule,
+    DashboardModule,
     NoopAnimationsModule,
     HttpClientModule,
     MatToolbarModule,

@@ -57,12 +57,12 @@ public class ClaimRestController {
         int finalisedAverage = (int) (Math.round(((double) numberFinalised
                                         / numberTotal) * 10000.0)/100.0);           
         ArrayList<Long> stats = new ArrayList<>();
-        stats.add(numberFire);
-        stats.add(numberDamage);
-        stats.add(numberTheft);
         stats.add(numberNewClaims);
         stats.add(numberInProgress);
         stats.add(Long.valueOf(finalisedAverage));
+        stats.add(numberFire);
+        stats.add(numberDamage);
+        stats.add(numberTheft);     
         return stats;
     }
 	

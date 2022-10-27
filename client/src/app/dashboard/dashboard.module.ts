@@ -5,6 +5,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardService } from './dashboard.service';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [DashboardService]
 })

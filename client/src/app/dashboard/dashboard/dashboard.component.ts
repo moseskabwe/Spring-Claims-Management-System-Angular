@@ -10,16 +10,24 @@ import { DashboardService } from '../dashboard.service';
 export class DashboardComponent implements OnInit {
 
 dashboardClaims!: Claim[];
+stats!: Number[];
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
     this.getDashboardClaims();
+    this.getDashboardStats();
   }
 
   private getDashboardClaims() {
     this.dashboardService.getDashboardClaimList().subscribe(data => {
       this.dashboardClaims = data;
+    });
+  }
+
+  private getDashboardStats() {
+    this.dashboardService.getDashboardStats().subscribe(data => {
+      this.stats = data;
     });
   }
 }

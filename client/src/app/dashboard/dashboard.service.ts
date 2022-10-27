@@ -14,4 +14,8 @@ export class DashboardService {
     getDashboardClaimList(): Observable<Claim[]> {
         return this.httpClient.get<Claim[]>(`${this.baseURL}`);
     }
+
+    getDashboardStats(): Observable<Number[]> {
+        return this.httpClient.get<Number[]>(`${this.baseURL}/stats`);
+    }
 }

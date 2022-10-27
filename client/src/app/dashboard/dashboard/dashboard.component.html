@@ -1,6 +1,52 @@
+<div class="stats">
+    <mat-card>
+        <div>
+            <span>New Claims</span>
+            <h3>{{ stats[0] }}</h3>
+        </div>
+        <mat-icon>note_add</mat-icon>
+    </mat-card>
+    <mat-card>
+        <div>
+            <span>In Progress</span>
+            <h3>{{ stats[1] }}</h3>
+        </div>
+        <mat-icon>edit</mat-icon>
+    </mat-card>
+    <mat-card>
+        <div>
+            <span>Finalised Claims</span>
+            <h3>{{ stats[2] }}%</h3>
+        </div>
+        <mat-icon>check_circle</mat-icon>
+    </mat-card>
+    <mat-card>
+        <div>
+            <span>Fire Claims</span>
+            <h3>{{ stats[3] }}</h3>
+        </div>
+        <mat-icon>whatshot</mat-icon>
+    </mat-card>
+    <mat-card>
+        <div>
+            <span>Damage Claims</span>
+            <h3>{{ stats[4] }}</h3>
+        </div>
+        <mat-icon>flash_on</mat-icon>
+    </mat-card>
+    <mat-card>
+        <div>
+            <span>Theft Claims</span>
+            <h3>{{ stats[5] }}</h3>
+        </div>
+        <mat-icon>warning</mat-icon>
+    </mat-card>
+</div>
+
 <div class="heading">
     <h2>Outstanding Claims</h2>
 </div>
+
 <table mat-table [dataSource]="dashboardClaims" class="mat-elevation-z8">
 
     <ng-container matColumnDef="claim-number">

@@ -1,0 +1,53 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(claimForm.value)" #claimForm="ngForm">
+        <div hidden="true">
+            <input type="text" hidden="true" [(ngModel)]="claim.claimNumber" name="claimNumber"/>           
+          </div>
+        <mat-card>
+            <h1>Claim Form</h1>
+            <br>
+            <h4>Policyholder Number</h4>
+            {{policyholder.policyHolderNumber}}
+            <br><br>
+            <h4>Policyholder Name</h4>
+            {{policyholder.firstName}} {{policyholder.lastName}}
+            <br><br>
+            <h4>Policy Number</h4>
+            {{policy.policyNumber}}
+            <br><br>
+            <h4>Loss Type:</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Select</mat-label>
+                <mat-select [(ngModel)]="claim.lossType" name="lossType">
+                    <mat-option value="Damage">Damage</mat-option>
+                    <mat-option value="Fire">Fire</mat-option>
+                    <mat-option value="Theft">Theft</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <h4>Incident Date:</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="claim.incidentDate" name="incidentDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <br><br>
+            <h4>Filing Date:</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker2" [(ngModel)]="claim.filingDate" name="filingDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <br><br>
+            <h4>Additional Details:</h4>
+            <mat-form-field appearance="fill">
+                <textarea matInput [(ngModel)]="claim.notes" name="notes"></textarea>
+            </mat-form-field>
+            <br><br>
+            <button mat-raised-button>Submit</button>
+        </mat-card>
+    </form>
+</div>

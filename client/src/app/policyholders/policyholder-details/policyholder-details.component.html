@@ -1,0 +1,90 @@
+<div class="container">
+    <mat-card>
+        <h1>Policyholder Details</h1>
+        <br>
+        <h4>Policyholder Number</h4>
+        {{policyholder.policyHolderNumber}}
+        <br><br>
+        <h4>Name</h4>
+        {{policyholder.firstName}} {{policyholder.lastName}}
+        <br><br>
+        <h4>Email</h4>
+        {{policyholder.email}}
+        <br><br>
+        <h4>Phone</h4>
+        {{policyholder.phoneNumber}}
+        <br><br>
+        <h4>Address</h4>
+        {{policyholder.address}}
+        <br><br>
+
+        <div class="heading">
+            <h2>Policies</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Policy number</th>
+                    <th>Policy Type</th>
+                    <th>Property Address</th>
+                    <th>Inception Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let policy of policyholder.policies">
+                    <td>
+                        <p>{{policy.policyNumber}}</p>
+                    </td>
+                    <td>
+                        <p>{{policy.policyType}}</p>
+                    </td>
+                    <td>
+                        <p>{{policy.property.propertyAddress}}</p>
+                    </td>
+                    <td>
+                        <p>{{policy.inceptionDate}}</p>
+                    </td>
+                    <td>
+                        <p> <a routerLink="/claims/add/{{policyholder.policyHolderNumber}}/{{policy.policyNumber}}" 
+                            routerLinkActive="active">File a Claim</a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="heading">
+            <h2>Claims History</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Claim number</th>
+                    <th>Status</th>
+                    <th>Loss Type</th>
+                    <th>Incident Date</th>
+                    <th>Report Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claim of policyholder.claims">
+                    <td>
+                        <p>{{claim.claimNumber}}</p>
+                    </td>
+                    <td>
+                        <p>{{claim.status}}</p>
+                    </td>
+                    <td>
+                        <p>{{claim.lossType}}</p>
+                    </td>
+                    <td>
+                        <p>{{claim.incidentDate}}</p>
+                    </td>
+                    <td>
+                        <p>{{claim.filingDate}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
+</div>

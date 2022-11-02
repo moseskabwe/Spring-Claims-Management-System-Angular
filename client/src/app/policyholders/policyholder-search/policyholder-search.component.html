@@ -37,7 +37,8 @@
 
     <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef> Select </th>
-        <td mat-cell *matCellDef="let policyholder"> </td>
+        <td mat-cell *matCellDef="let policyholder"> <a routerLink="/policyholders/{{policyholder.policyHolderNumber}}" 
+            routerLinkActive="active" (click)="onSelect(policyholder)"> Select </a> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="['policyholder-number', 'first-name', 'last-name', 'email', 'phone-number', 'select']"></tr>

@@ -15,10 +15,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.simplehomeinsurance.claims_management_system.utils.DateUtils;
 
 @Entity
 @Table(name="claim_payment")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="paymentNumber")
 public class ClaimPayment {
 	
 	@Id
@@ -26,7 +29,7 @@ public class ClaimPayment {
 	@Column(name="id")
 	private int paymentNumber;
 	
-	//@JsonBackReference
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="claim_number")
 	private Claim claim;

@@ -15,10 +15,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.simplehomeinsurance.claims_management_system.utils.DateUtils;
 
 @Entity
 @Table(name="declined_claims")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="declinedClaimNumber")
 public class DeclinedClaim {
 	
 	@Id

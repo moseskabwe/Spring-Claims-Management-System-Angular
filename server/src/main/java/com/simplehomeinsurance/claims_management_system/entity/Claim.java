@@ -25,12 +25,16 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.simplehomeinsurance.claims_management_system.utils.DateUtils;
 import com.simplehomeinsurance.claims_management_system.utils.StringPrefixedSequenceIdGenerator;
 
 @Entity
 @Table(name="claim")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="claimNumber")
 public class Claim {
 	
 	@Id
@@ -48,17 +52,17 @@ public class Claim {
 	@Column(name="claim_number")
 	private String claimNumber;
 	
-	//@JsonBackReference(value="claim-user")
+	@JsonBackReference(value="claim-user")
 	@ManyToOne
 	@JoinColumn(name="adjuster_number")
 	private User adjuster;
 	
-	//@JsonBackReference(value="claim-policyholder")
+	@JsonBackReference(value="claim-policyholder")
 	@ManyToOne
 	@JoinColumn(name="policyholder_number")
 	private PolicyHolder policyHolder;
 	
-	//@JsonBackReference(value="claim-policy")
+	@JsonBackReference(value="claim-policy")
 	@ManyToOne
 	@JoinColumn(name="policy_number")
 	private Policy policy;

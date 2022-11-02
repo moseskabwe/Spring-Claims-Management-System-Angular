@@ -8,14 +8,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table';
+import { MatHeaderCell, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { PolicyholderDetailsComponent } from './policyholder-details/policyholder-details.component';
 
 
 
 @NgModule({
   declarations: [
-    PolicyholderSearchComponent
+    PolicyholderSearchComponent,
+    PolicyholderDetailsComponent
   ],
   imports: [
     CommonModule,

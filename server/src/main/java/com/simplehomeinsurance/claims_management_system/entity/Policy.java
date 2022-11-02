@@ -17,11 +17,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.simplehomeinsurance.claims_management_system.utils.DateUtils;
 
 @Entity
 @Table(name="policy")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="policyNumber")
 public class Policy {
 	
 	@Id
@@ -51,6 +55,7 @@ public class Policy {
 	@Column(name="in_force")
 	private int inForce;
 	
+	//@JsonManagedReference(value="claim-policy")
 	@JsonIgnore
 	@OneToMany(mappedBy = "policy")
 	private Set<Claim> claims;

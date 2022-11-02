@@ -12,10 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="policyholder")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="policyHolderNumber")
 public class PolicyHolder {
 	
 	@Id
@@ -37,11 +42,14 @@ public class PolicyHolder {
 	@Column(name="address")
 	private String address;
 	
-	@JsonIgnore
+	//@JsonManagedReference(value="policy-policyholder")
+	//@JsonIgnore
 	@OneToMany(mappedBy = "policyHolder", fetch = FetchType.EAGER)
 	private Set<Policy> policies;
 
 	@JsonIgnore
+	//@JsonIgnoreProperties("policyHolder")
+	//@JsonManagedReference
 	@OneToMany(mappedBy = "policyHolder", fetch = FetchType.EAGER)
 	private Set<Claim> claims;
 	

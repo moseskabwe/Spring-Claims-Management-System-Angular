@@ -91,6 +91,7 @@ public class ClaimRestController {
 		policyHolder.addClaim(claim);
 		claim.setPolicyHolder(policyHolder);
 		claim.setPolicy(policy);
+		claim.setStatus("First Notice");
 		claimService.saveClaim(claim);
 		return claim;
 	}

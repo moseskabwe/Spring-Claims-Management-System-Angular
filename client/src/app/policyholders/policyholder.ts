@@ -1,12 +1,13 @@
 import { Claim } from "../claims/claim";
+import { Policy } from "../policies/policy";
 
 export class Policyholder {
-    policyHolderNumber!: String;
-    firstName!: String;
-    lastName!: String;
-    email!: String;
-    phoneNumber!: String;
-    address!: String;
-    //policies!: Policy;
+    policyHolderNumber!: string;
+    firstName!: string;
+    lastName!: string;
+    email!: string;
+    phoneNumber!: string;
+    address!: string;
+    policies!: Policy[];
     claims!: Claim[];
 }

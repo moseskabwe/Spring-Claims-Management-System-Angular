@@ -10,12 +10,12 @@
 
     <ng-container matColumnDef="policyholder">
         <th mat-header-cell *matHeaderCellDef> Policyholder Number </th>
-        <td mat-cell *matCellDef="let claim"> {{ claim.policyHolder.policyHolderNumber }} </td>
+         <td mat-cell *matCellDef="let claim"> <!-- {{ claim.policyHolder.policyHolderNumber }}--> </td>  
     </ng-container>
 
     <ng-container matColumnDef="policy-type">
         <th mat-header-cell *matHeaderCellDef> Policy Type </th>
-        <td mat-cell *matCellDef="let claim"> {{ claim.policy.policyType }} </td>
+        <td mat-cell *matCellDef="let claim"> <!--{{  claim.policy.policyType }} --></td>
     </ng-container>
 
     <ng-container matColumnDef="loss-type">

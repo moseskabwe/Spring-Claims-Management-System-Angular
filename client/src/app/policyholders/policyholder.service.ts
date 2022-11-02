@@ -15,6 +15,10 @@ export class PolicyholderService {
         return this.httpClient.get<Policyholder[]>(`${this.baseURL}`);
     }
 
+    getPolicyholder(policyholderNumber: string): Observable<Policyholder> {
+        return this.httpClient.get<Policyholder>(`${this.baseURL}/` + policyholderNumber);
+    } 
+
     searchPolicyholders(searchTerm: string): Observable<Policyholder[]> {
         return this.httpClient.get<Policyholder[]>(`${this.baseURL}?searchTerm=` + searchTerm);
     }

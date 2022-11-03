@@ -8,9 +8,8 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-dashboardClaims!: Claim[];
-stats!: Number[];
+  dashboardClaims!: Claim[];
+  stats!: number[];
 
   constructor(private dashboardService: DashboardService) { }
 

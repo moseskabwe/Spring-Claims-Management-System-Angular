@@ -10,7 +10,6 @@ import { ClaimPaymentService } from '../claimpayment.service';
   styleUrls: ['./claimpayment-list.component.css']
 })
 export class ClaimpaymentListComponent implements OnInit {
-
   claimPaymentList!: ClaimPayment[];
   claim!: Claim;
 
@@ -35,5 +34,4 @@ export class ClaimpaymentListComponent implements OnInit {
     );
     this.router.navigate(['/claims/' + this.claim.claimNumber]);
   }
-
 }

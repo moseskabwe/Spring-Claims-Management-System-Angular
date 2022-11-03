@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .container {
     padding-top: 20px;
@@ -12,12 +19,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex-wrap: wrap;
 }
 
-th{
+th {
     font-weight: normal;
 }
 
-
-
-h1, h2, h3, h4, th {
+h1,
+h2,
+h3,
+h4,
+th {
     color: #004a9f;
 }

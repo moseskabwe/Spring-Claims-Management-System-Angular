@@ -9,12 +9,11 @@ import { PolicyholderService } from '../policyholder.service';
   styleUrls: ['./policyholder-search.component.css']
 })
 export class PolicyholderSearchComponent implements OnInit {
-
   policyholders!: Policyholder[];
   searchTerm!: string;
 
   constructor(private policyholderService: PolicyholderService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.policyholderService.getPolicyholders().subscribe(data => {

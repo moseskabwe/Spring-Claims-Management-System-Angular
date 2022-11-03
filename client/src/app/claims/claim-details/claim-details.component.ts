@@ -10,7 +10,6 @@ import { ClaimService } from '../claim.service';
   styleUrls: ['./claim-details.component.css']
 })
 export class ClaimDetailsComponent implements OnInit {
-
   claim!: Claim;
   claimNumber!: string;
   declinedClaim!: DeclinedClaim;
@@ -36,8 +35,4 @@ export class ClaimDetailsComponent implements OnInit {
     this.isVisibleClaimPayment = !this.isVisibleClaimPayment;
     this.isVisibleDeclinedClaim = false;
   }
-  // onNewDeclinedClaim(newDeclinedClaim: DeclinedClaim) {
-  //   this.declinedClaim = newDeclinedClaim;
-  //   this.showDeclineClaimComponent();
-  // }
 }

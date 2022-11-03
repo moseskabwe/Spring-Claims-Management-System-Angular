@@ -1,13 +1,13 @@
 mat-toolbar {
-    background: #004a9f;
-    color: white;
-    justify-content: space-between;
+  background: #004a9f;
+  color: white;
+  justify-content: space-between;
 }
 
 mat-toolbar .profile mat-icon {
-    margin-right: 20px;
-    font-size: 25px;
-    font-weight: 400;
+  margin-right: 20px;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 mat-sidenav-container {
@@ -15,33 +15,33 @@ mat-sidenav-container {
 }
 
 .profile {
-    margin-right: 0px;
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-  }
+  margin-right: 0px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
 
 mat-sidenav {
-    width: 300px;
-    background: #004a9f;
-    height: 100%;
-    position: fixed;
-     color: white;
+  width: 300px;
+  background: #004a9f;
+  height: 100%;
+  position: fixed;
+  color: white;
 }
 
 .logo img {
-    width: 160px;
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-  }
+  width: 160px;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 
 .items {
-    margin-top: 20px;    
+  margin-top: 20px;
 }
 
 .items button {
@@ -61,13 +61,13 @@ mat-sidenav {
 }
 
 .items button span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
 }

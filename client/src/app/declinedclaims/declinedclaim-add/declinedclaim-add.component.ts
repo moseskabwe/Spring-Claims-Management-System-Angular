@@ -9,7 +9,6 @@ import { DeclinedClaimService } from '../declinedclaim.service';
   styleUrls: ['./declinedclaim-add.component.css']
 })
 export class DeclinedclaimAddComponent implements OnInit {
-
   declinedClaim: DeclinedClaim = new DeclinedClaim();
   claimNumber!: string;
 

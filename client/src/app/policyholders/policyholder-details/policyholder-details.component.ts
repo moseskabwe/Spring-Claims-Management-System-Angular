@@ -13,9 +13,9 @@ export class PolicyholderDetailsComponent implements OnInit {
   policyholder!: Policyholder;
   policyholderNumber!: string;
   claims!: Claim[];
-  
+
   constructor(private policyholderService: PolicyholderService,
-    private route: ActivatedRoute, private router: Router) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const policyholderNumber = this.route.snapshot.params['id'];

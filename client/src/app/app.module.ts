@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ClaimsModule } from './claims/claims.module';
-import { UsersModule } from './users/users.module';
 import { ClaimpaymentsModule } from './claimpayments/claimpayments.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -16,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PolicyholdersModule } from './policyholders/policyholders.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { PolicyholdersModule } from './policyholders/policyholders.module';
     MatButtonModule,
     MatDividerModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

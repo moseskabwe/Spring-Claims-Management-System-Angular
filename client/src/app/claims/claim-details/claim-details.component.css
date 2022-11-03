@@ -1,4 +1,5 @@
-h1, h4 {
+h1,
+h4 {
     margin-bottom: 0;
 }
 
@@ -8,7 +9,7 @@ button {
 }
 
 #decline {
-    background-color:crimson;
+    background-color: crimson;
     margin-left: 15px;
 }
 
@@ -17,7 +18,7 @@ button {
     border: 0px;
     table-layout: fixed;
     width: 100%;
-  }
+}
 
 .container {
     align-items: top;
@@ -25,7 +26,8 @@ button {
     margin-right: auto;
 }
 
-#details-1, #details-2 {
+#details-1,
+#details-2 {
     width: 45%;
     padding: 16px 20px;
     vertical-align: top;

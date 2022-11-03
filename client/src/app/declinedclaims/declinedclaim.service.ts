@@ -7,7 +7,6 @@ import { DeclinedClaim } from './declinedclaim';
     providedIn: 'root'
 })
 export class DeclinedClaimService {
-
     constructor(private httpClient: HttpClient) { }
 
     declineClaim(declinedClaim: DeclinedClaim, claimNumber: string): Observable<DeclinedClaim>{

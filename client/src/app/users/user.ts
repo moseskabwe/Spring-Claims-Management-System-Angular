@@ -7,5 +7,5 @@ export class User {
     email!: string;
     phoneNumber!: string;
     username!: string;
-    //claims!: Claim[];
+    claims!: Claim[];
 }

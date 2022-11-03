@@ -8,10 +8,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatHeaderCell, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { PolicyholderDetailsComponent } from './policyholder-details/policyholder-details.component';
-
+import { PolicyholderService } from './policyholder.service';
 
 
 @NgModule({
@@ -29,6 +29,7 @@ import { PolicyholderDetailsComponent } from './policyholder-details/policyholde
     FormsModule,
     MatTableModule,
     MatIconModule
-  ]
+  ],
+  providers: [PolicyholderService]
 })
 export class PolicyholdersModule { }

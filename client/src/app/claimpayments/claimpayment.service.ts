@@ -24,5 +24,4 @@ export class ClaimPaymentService {
     getClaim(paymentNumber: number): Observable<Claim> {
         return this.httpClient.get<Claim>(`${this.baseURL}/` + paymentNumber + '/claim');
     }
-
 }

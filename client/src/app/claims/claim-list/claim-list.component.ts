@@ -8,7 +8,6 @@ import { ClaimService } from '../claim.service';
   styleUrls: ['./claim-list.component.css']
 })
 export class ClaimListComponent implements OnInit {
-
 claims!: Claim[];
 
   constructor(private claimService: ClaimService) { }

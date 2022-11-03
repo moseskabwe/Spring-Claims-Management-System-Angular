@@ -9,7 +9,6 @@ import { ClaimPaymentService } from '../claimpayment.service';
   styleUrls: ['./claimpayment-add.component.css']
 })
 export class ClaimpaymentAddComponent implements OnInit {
-
   payment: ClaimPayment = new ClaimPayment();
   claimNumber!: string;
 
@@ -24,7 +23,6 @@ export class ClaimpaymentAddComponent implements OnInit {
   onSubmit(payment: ClaimPayment) {
     this.claimPaymentService.createPayment(payment, this.claimNumber).subscribe(
       (newPayment) => {
-        console.log(newPayment);
         this.payment = newPayment;
         this.goToDashboard();
       }

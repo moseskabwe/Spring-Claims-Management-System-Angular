@@ -39,7 +39,6 @@
                 </td>
             </tr>
         </table>
-
         <div *ngIf="claim.status == 'Finalised'">
             <h2>Decision</h2>
             Claim Approved
@@ -86,21 +85,16 @@
         <div *ngIf="claim.status == 'In Progress'">
             <h2>Decision</h2>
             <button mat-raised-button (click)="showClaimPaymentComponent()">Finalise Claim</button>
-            
             <button mat-raised-button (click)="showDeclineClaimComponent()" id="decline">Decline Claim</button>
-            <!--(newDeclinedClaim)="onNewDeclinedClaim($event)"-->
             <br><br>
             <div *ngIf="isVisibleClaimPayment">
                 <app-claimpayment-add>...</app-claimpayment-add>
             </div>
-
             <div *ngIf="isVisibleDeclinedClaim">
                 <app-declinedclaim-add>...</app-declinedclaim-add>
             </div>
-
         </div>
     </mat-card>
-
     <mat-card id="details-2">
         <div>
             <h2>Policyholder Details</h2>

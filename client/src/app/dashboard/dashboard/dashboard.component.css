@@ -1,43 +1,43 @@
 table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading {
-    padding: 20px 20px 0 20px;
-    margin-left: 150px;
+  padding: 20px 20px 0 20px;
+  margin-left: 150px;
 }
 
 .stats {
-    padding: 30px 30px 30px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 mat-card {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 140px;
- }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 140px;
+}
 
- .stats mat-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #595f66;
-  }
-  
-  .stats mat-card span {
-    font-size: 15px;
-  }
+.stats mat-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #595f66;
+}
+
+.stats mat-card span {
+  font-size: 15px;
+}
 
 .stats mat-icon {
-    text-align: center;
-    font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #595f66;
-  } 
+  text-align: center;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #595f66;
+}

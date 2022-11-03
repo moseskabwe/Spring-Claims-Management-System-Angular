@@ -17,7 +17,6 @@
         <h4>Address</h4>
         {{policyholder.address}}
         <br><br>
-
         <div class="heading">
             <h2>Policies</h2>
         </div>
@@ -46,13 +45,12 @@
                         <p>{{policy.inceptionDate}}</p>
                     </td>
                     <td>
-                        <p> <a routerLink="/claims/add/{{policyholder.policyHolderNumber}}/{{policy.policyNumber}}" 
-                            routerLinkActive="active">File a Claim</a></p>
+                        <p> <a routerLink="/claims/add/{{policyholder.policyHolderNumber}}/{{policy.policyNumber}}"
+                                routerLinkActive="active">File a Claim</a></p>
                     </td>
                 </tr>
             </tbody>
         </table>
-
         <div class="heading">
             <h2>Claims History</h2>
         </div>
@@ -69,8 +67,8 @@
             <tbody>
                 <tr *ngFor="let claim of claims">
                     <td>
-                        <p> <a routerLink="/claims/{{claim.claimNumber}}" 
-                            routerLinkActive="active">{{claim.claimNumber}}</a></p>
+                        <p> <a routerLink="/claims/{{claim.claimNumber}}"
+                                routerLinkActive="active">{{claim.claimNumber}}</a></p>
                     </td>
                     <td>
                         <p>{{claim.status}}</p>

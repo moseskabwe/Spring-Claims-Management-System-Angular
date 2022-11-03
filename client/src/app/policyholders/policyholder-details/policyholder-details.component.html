@@ -67,9 +67,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let claim of policyholder.claims">
+                <tr *ngFor="let claim of claims">
                     <td>
-                        <p>{{claim.claimNumber}}</p>
+                        <p> <a routerLink="/claims/{{claim.claimNumber}}" 
+                            routerLinkActive="active">{{claim.claimNumber}}</a></p>
                     </td>
                     <td>
                         <p>{{claim.status}}</p>

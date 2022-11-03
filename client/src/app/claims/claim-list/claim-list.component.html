@@ -8,16 +8,6 @@
         <td mat-cell *matCellDef="let claim"> {{claim.claimNumber}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="policyholder">
-        <th mat-header-cell *matHeaderCellDef> Policyholder Number </th>
-         <td mat-cell *matCellDef="let claim"> <!-- {{ claim.policyHolder.policyHolderNumber }}--> </td>  
-    </ng-container>
-
-    <ng-container matColumnDef="policy-type">
-        <th mat-header-cell *matHeaderCellDef> Policy Type </th>
-        <td mat-cell *matCellDef="let claim"> <!--{{  claim.policy.policyType }} --></td>
-    </ng-container>
-
     <ng-container matColumnDef="loss-type">
         <th mat-header-cell *matHeaderCellDef> Loss Type </th>
         <td mat-cell *matCellDef="let claim"> {{claim.lossType}} </td>
@@ -45,9 +35,9 @@
 
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let claim"> </td>
+        <td mat-cell *matCellDef="let claim"> <a routerLink="/claims/{{claim.claimNumber}}" routerLinkActive="active">View</a></td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="['claim-number', 'policyholder', 'policy-type', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['claim-number', 'policyholder', 'policy-type', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action'];"></tr>
+    <tr mat-header-row *matHeaderRowDef="['claim-number', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['claim-number', 'loss-type', 'incident-date', 'report-date', 'adjuster', 'status', 'action'];"></tr>
 </table>

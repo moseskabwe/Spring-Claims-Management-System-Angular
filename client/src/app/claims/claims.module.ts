@@ -16,6 +16,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { DeclinedclaimAddComponent } from '../declinedclaims/declinedclaim-add/declinedclaim-add.component';
+import { DeclinedclaimsModule } from '../declinedclaims/declinedclaims.module';
+import { ClaimpaymentsModule } from '../claimpayments/claimpayments.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatNativeDateModule,
     MatButtonModule,
-    FormsModule
+    FormsModule, DeclinedclaimsModule,
+    ClaimpaymentsModule
   ],
   providers: [ClaimService]
 })

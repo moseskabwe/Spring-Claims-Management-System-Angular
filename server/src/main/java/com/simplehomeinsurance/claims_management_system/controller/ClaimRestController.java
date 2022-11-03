@@ -66,16 +66,11 @@ public class ClaimRestController {
         return stats;
     }
 	
-	@GetMapping("/claims/{claimNumber}/users/{userId}")
-	public Claim getClaim(@PathVariable String claimNumber,
-						  @PathVariable int userId,
-						  HttpServletRequest request) {	
+	@GetMapping("/claims/{claimNumber}")
+	public Claim getClaim(@PathVariable String claimNumber) {	
 		Claim claim = claimService.getClaim(claimNumber);
-		User user = userService.getUser(userId);
-		if (request.isUserInRole("ROLE_ADJUSTER") && 
-				claim.getStatus().equalsIgnoreCase("First Notice")) {
+		if (claim.getStatus().equalsIgnoreCase("First Notice")) {
 			claim.setStatus("In Progress");
-			claim.setAdjuster(user);
 			claimService.updateClaim(claim);
 		}
 		return claim;

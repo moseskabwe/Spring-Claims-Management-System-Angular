@@ -2,13 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DeclinedclaimsRoutingModule } from './declinedclaims-routing.module';
+import { DeclinedclaimAddComponent } from './declinedclaim-add/declinedclaim-add.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+     DeclinedclaimAddComponent
+  ],
   imports: [
     CommonModule,
-    DeclinedclaimsRoutingModule
+    DeclinedclaimsRoutingModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+  ],
+  exports: [
+    DeclinedclaimAddComponent
   ]
 })
 export class DeclinedclaimsModule { }

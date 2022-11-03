@@ -39,6 +39,12 @@ public class ClaimPaymentRestController {
 		return claimPaymentService.getClaimPayment(paymentNumber);
 	}
 	
+	@GetMapping("/payments/{paymentNumber}/claim")
+    public Claim getPaymentClaim(@PathVariable int paymentNumber) {  
+	    ClaimPayment payment = claimPaymentService.getClaimPayment(paymentNumber);
+        return payment.getClaim();
+    }
+	
 	@GetMapping("/claims/{claimNumber}/payments")
 	public List<ClaimPayment> getClaimPaymentForClaim(@PathVariable String claimNumber) {
 		Claim claim = claimService.getClaim(claimNumber);

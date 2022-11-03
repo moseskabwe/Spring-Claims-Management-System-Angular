@@ -48,7 +48,6 @@ public class PolicyHolder {
 	private Set<Policy> policies;
 
 	@JsonIgnore
-	//@JsonIgnoreProperties("policyHolder")
 	//@JsonManagedReference
 	@OneToMany(mappedBy = "policyHolder", fetch = FetchType.EAGER)
 	private Set<Claim> claims;

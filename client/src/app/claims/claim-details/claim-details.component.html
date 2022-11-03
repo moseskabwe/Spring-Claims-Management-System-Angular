@@ -1,1 +1,177 @@
-<p>claim-details works!</p>
+<div class="container">
+    <mat-card id="details-1">
+        <h1>Claim Number {{claim.claimNumber}}</h1>
+        <br>
+        <table class="details-table">
+            <tr>
+                <td>
+                    <h4>Status</h4>
+                    {{claim.status}}
+                </td>
+                <td>
+                    <div *ngIf="claim.adjuster != null">
+                        <h4>Adjuster</h4>
+                        {{claim.adjuster.firstName}} {{claim.adjuster.lastName}}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Loss Type</h4>
+                    {{claim.lossType}}
+                </td>
+                <td>
+                    <h4>Date reported</h4>
+                    {{claim.filingDate}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Incident Date</h4>
+                    {{claim.incidentDate}}
+                </td>
+                <td>
+                    <div *ngIf="claim.notes != null">
+                        <h4>Additional Details</h4>
+                        {{claim.notes}}
+                        <br><br>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div *ngIf="claim.status == 'Finalised'">
+            <h2>Decision</h2>
+            Claim Approved
+            <br><br>
+            <h3>Payment Details</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let payment of claim.payments">
+                        <td>
+                            <p>{{payment.paymentDate}}</p>
+                        </td>
+                        <td>
+                            <p>{{payment.paymentAmount}}</p>
+                        </td>
+                        <td>
+                            <p>{{payment.notes}}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button mat-raised-button (click)="showClaimPaymentComponent()">Add a payment</button>
+            <br><br>
+            <div *ngIf="isVisibleClaimPayment">
+                <app-claimpayment-add>...</app-claimpayment-add>
+            </div>
+        </div>
+        <div *ngIf="claim.status == 'Declined'">
+            <h2>Decision</h2>
+            Claim Declined
+            <br><br>
+            <h4>Date</h4>
+            {{claim.declinedClaim.declinedDate}}
+            <br><br>
+            <h4>Reason</h4>
+            {{claim.declinedClaim.reason}}
+        </div>
+        <div *ngIf="claim.status == 'In Progress'">
+            <h2>Decision</h2>
+            <button mat-raised-button (click)="showClaimPaymentComponent()">Finalise Claim</button>
+            
+            <button mat-raised-button (click)="showDeclineClaimComponent()" id="decline">Decline Claim</button>
+            <!--(newDeclinedClaim)="onNewDeclinedClaim($event)"-->
+            <br><br>
+            <div *ngIf="isVisibleClaimPayment">
+                <app-claimpayment-add>...</app-claimpayment-add>
+            </div>
+
+            <div *ngIf="isVisibleDeclinedClaim">
+                <app-declinedclaim-add>...</app-declinedclaim-add>
+            </div>
+
+        </div>
+    </mat-card>
+
+    <mat-card id="details-2">
+        <div>
+            <h2>Policyholder Details</h2>
+            <br>
+            <table class="details-table">
+                <tr>
+                    <td>
+                        <h4>Policyholder Number</h4>
+                        {{claim.policyHolder.policyHolderNumber}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Name</h4>
+                        {{claim.policyHolder.firstName}} {{claim.policyHolder.lastName}}
+                    </td>
+                    <td>
+                        <h4>Phone</h4>
+                        {{claim.policyHolder.phoneNumber}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Email</h4>
+                        {{claim.policyHolder.email}}
+                    </td>
+                    <td>
+                        <h4>Address</h4>
+                        {{claim.policyHolder.address}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Policy Details</h2>
+            <br>
+            <table class="details-table">
+                <tr>
+                    <td>
+                        <h4>Policy Number</h4>
+                        {{claim.policy.policyNumber}}
+                    </td>
+                    <td>
+                        <h4>Inception Date</h4>
+                        {{claim.policy.inceptionDate}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Policy Type</h4>
+                        {{claim.policy.policyType}}
+                    </td>
+                    <td>
+                        <div *ngIf="claim.policy.inForce == 1">
+                            <p style="color: green;">Policy in force</p>
+                        </div>
+                        <div *ngIf="claim.policy.inForce == 0">
+                            <p style="color: red;">Policy not in force</p>
+                            <br>
+                            <h4>End Date</h4>
+                            {{claim.policy.endDate}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Property Address</h4>
+                        {{claim.policy.property.propertyAddress}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </mat-card>
+</div>

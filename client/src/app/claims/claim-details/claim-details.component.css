@@ -1,0 +1,32 @@
+h1, h4 {
+    margin-bottom: 0;
+}
+
+button {
+    background-color: #004a9f;
+    color: white;
+}
+
+#decline {
+    background-color:crimson;
+    margin-left: 15px;
+}
+
+.details-table {
+    margin-bottom: 40px;
+    border: 0px;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+.container {
+    align-items: top;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#details-1, #details-2 {
+    width: 45%;
+    padding: 16px 20px;
+    vertical-align: top;
+}

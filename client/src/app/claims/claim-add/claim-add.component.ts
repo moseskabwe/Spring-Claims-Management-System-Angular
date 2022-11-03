@@ -42,8 +42,8 @@ export class ClaimAddComponent implements OnInit {
     this.claimService.createClaim(claim, this.policyholder.policyHolderNumber, 
         this.policy.policyNumber).subscribe(newClaim => { 
           console.log(newClaim);
-          this.goToDashboard();}
-          )
+          this.goToDashboard();
+        })
   }
 
   goToDashboard(){

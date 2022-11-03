@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { Claim } from '../claims/claim';
 import { Policyholder } from './policyholder';
 
 @Injectable({
@@ -21,5 +22,9 @@ export class PolicyholderService {
 
     searchPolicyholders(searchTerm: string): Observable<Policyholder[]> {
         return this.httpClient.get<Policyholder[]>(`${this.baseURL}?searchTerm=` + searchTerm);
+    }
+
+    getPolicyholderClaims(policyholderNumber: string): Observable<Claim[]> {
+        return this.httpClient.get<Claim[]>(`${this.baseURL}/` + policyholderNumber + `/claims`);
     }
 }

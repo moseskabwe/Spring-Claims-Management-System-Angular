@@ -52,17 +52,17 @@ public class Claim {
 	@Column(name="claim_number")
 	private String claimNumber;
 	
-	@JsonBackReference(value="claim-user")
+	//@JsonBackReference(value="claim-user")
 	@ManyToOne
 	@JoinColumn(name="adjuster_number")
 	private User adjuster;
 	
-	@JsonBackReference(value="claim-policyholder")
+	//@JsonBackReference(value="claim-policyholder")
 	@ManyToOne
 	@JoinColumn(name="policyholder_number")
 	private PolicyHolder policyHolder;
 	
-	@JsonBackReference(value="claim-policy")
+	//@JsonBackReference(value="claim-policy")
 	@ManyToOne
 	@JoinColumn(name="policy_number")
 	private Policy policy;
@@ -82,11 +82,11 @@ public class Claim {
 	@Column(name="notes")
 	private String notes;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToOne(mappedBy = "claim")
 	private DeclinedClaim declinedClaim;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy = "claim", fetch = FetchType.EAGER)
 	private Set<ClaimPayment> payments;
 	

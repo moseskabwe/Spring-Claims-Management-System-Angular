@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit(declinedClaimForm.value)" #declinedClaimForm="ngForm">
+    <input type="text" hidden="true" [(ngModel)]="declinedClaim.declinedClaimNumber" name="declinedClaimNumber" />
+    <h4>Reason:</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Reason</mat-label>
+        <textarea id="reason" name="reason" matInput [(ngModel)]="declinedClaim.reason" required></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button>Submit</button>
+</form>
